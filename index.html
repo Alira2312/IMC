@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+</head>
+
+<body>
+    <script>
+        // Función para calcular el IMC y devolver la clasificación
+        function calcularIMC(peso, altura) {
+            var imc = peso / (altura * altura);
+            var clasificacion;
+
+            if (imc < 18.5) {
+                clasificacion = "bajo peso";
+            } else if (imc >= 18.5 && imc < 25) {
+                clasificacion = "peso normal";
+            } else if (imc >= 25 && imc < 30) {
+                clasificacion = "sobre peso";
+            } else {
+                clasificacion = "obesidad";
+            }
+
+            return clasificacion;
+        }
+
+        // Solicitar al usuario su nombre
+        var nombre = prompt("Por favor, ingresa tu nombre:");
+
+        // Solicitar al usuario su peso en kg
+        var peso = parseFloat(prompt("Por favor, ingresa tu peso en kg:"));
+
+        // Solicitar al usuario su altura en metros
+        var altura = parseFloat(prompt("Por favor, ingresa tu altura en metros:"));
+
+        // Calcular el IMC y obtener la clasificación
+        var clasificacion = calcularIMC(peso, altura);
+
+        // Calcular el IMC
+        var imc = peso / (altura * altura);
+
+        // Mostrar el resultado en la consola y en la página
+        var resultado = nombre + " tiene " + imc.toFixed(2) + " de IMC y se clasifica como " + clasificacion + ".";
+        console.log(resultado);
+        document.write(resultado);
+    </script>
+</body>
+
+</html>
